@@ -1,0 +1,8 @@
+{
+  "name": "marvelapp",
+  "app_id": "70c58ec3",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
