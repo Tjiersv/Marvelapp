@@ -1,11 +1,11 @@
 ion-slides {
-  background-position: center;
   display: block;
   margin: auto;
   .slide {
     background: bottom no-repeat;
     height: 100vh;
     width: 100%;
+    overflow: scroll;
     .slide-bgImg {
       top: 0;
       margin-top: 50px;
@@ -32,6 +32,7 @@ ion-slides {
     }
   }
   .personajes-list{
+    overflow: scroll;
     ion-list-header{
       font-size: 20px;
     }
@@ -63,4 +64,76 @@ ion-grid {
 .item-md {  
   background-color: rgba(0, 0, 0, 0);
   color: white;
+}
+
+@media screen and (max-width: 321px) {
+  ion-slides {
+    .slide {
+      
+      .slide-bgImg {
+        margin-top: 0px;
+        height: 100vh;
+        ion-item {
+        }
+        p {
+          font-size: 13px;
+        }
+        .slide-bgImg-grid{
+          margin-top: 50px;
+        }
+      }
+    }
+    .personajes-list{
+      ion-list-header{
+        font-size: 10px;
+        color: white;
+      }
+      ion-item{
+        background: rgba(76, 76, 76, 0);
+        color: white;
+        h2{
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  ion-title {
+    font-size: 30px;
+  }
+  ion-slides {
+    .slide {
+      width: 1000px;
+      background-position: top;
+      background-size: cover;
+      .slide-bgImg {
+        margin-top: 300px;
+        height: 100vh;
+        ion-item {
+        }
+        p, small {
+          padding: 30px;
+          font-size: 20px;
+        }
+        .slide-bgImg-grid{
+          margin-top: 300px;
+        }
+      }
+    }
+    .personajes-list{
+      ion-list-header{
+        font-size: 30px;
+        color: white;
+      }
+      ion-item{
+        background: rgba(76, 76, 76, 0);
+        color: white;
+        h2{
+          font-size: 30px;
+        }
+      }
+    }
+  }
 }

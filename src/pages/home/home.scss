@@ -47,3 +47,44 @@
     }
   }
 }
+
+@media screen and (min-width: 768px) {
+  .card-background-page {
+    ion-card {
+      height: 250px;
+      .bg-container {
+        background-size: cover;
+      }
+      .card-title {
+        position: absolute;
+        top: 10%;
+        font-size: 2em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+        padding: 10px 10px;
+      }
+      .card-subtitle {
+        font-size: 2.2em;
+        .icon-arrow{
+          font-size: 2em;
+        }
+        small{
+          padding-bottom: 2px;
+        }
+  
+      }
+    }
+    ion-fab{
+      .add-button{
+        margin: 50px;
+          padding: 50px;
+        ion-icon{
+          margin: 50px;
+          padding: 50px;
+          font-size: 100px;
+        }
+      }
+    }
+  }
+}

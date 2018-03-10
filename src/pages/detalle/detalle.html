@@ -14,11 +14,10 @@
   <!-- detalle slides components -->
   <ion-slides pager>
 
-    <!-- slide 1 -->
+    <!-- slide info -->
     <ion-slide class="slide" [ngStyle]="{'background-image': 'url('+ comic.thumbnail +')'}">
       <div class="slide-bgImg">
         <ion-grid class="slide-bgImg-grid">
-
 
           <!-- descripcion seccion -->
           <ion-row>
@@ -66,7 +65,6 @@
             <img [src]="pj.thumbnail">
           </ion-avatar>
           <h2>{{pj.name}}</h2>
-          <p>{{pj.description}}</p>
           <small>Modificado: {{pj.modified | date:'fullDate'}}</small>
         </ion-item>
       </ion-list>

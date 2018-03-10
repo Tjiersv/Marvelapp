@@ -7,20 +7,26 @@
 <ion-content class="card-background-page">
 
   <!-- tarjetas de comics -->
-  <ion-card (click)="getDetalle(comic)" *ngFor="let comic of comicList">
-    <div [ngStyle]="{'background-image': 'url('+ comic.thumbnail +')'}" class="bg-container">
-      <div class="bg-img"></div>
-    </div>
-    <div text-left padding-left class="card-title">{{ comic.title | uppercase }}</div>
-    <div text-left padding-left class="card-subtitle">
-      <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>  
-      <small> {{ comic.date | date }}</small>
-      <br>
-      <ion-icon ios="ios-cash" md="md-cash"></ion-icon>
-      <small> ${{ comic.prices }}</small>
-      <ion-icon class="icon-arrow" float-end padding-right ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>
-    </div>
-  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-lg-6 *ngFor="let comic of comicList">
+        <ion-card (click)="getDetalle(comic)">
+          <div [ngStyle]="{'background-image': 'url('+ comic.thumbnail +')'}" class="bg-container">
+            <div class="bg-img"></div>
+          </div>
+          <div text-left padding-left class="card-title">{{ comic.title | uppercase }}</div>
+          <div text-left padding-left class="card-subtitle">
+            <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>  
+            <small> {{ comic.date | date }}</small>
+            <br>
+            <ion-icon ios="ios-cash" md="md-cash"></ion-icon>
+            <small> ${{ comic.prices }}</small>
+            <ion-icon class="icon-arrow" float-end padding-right ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>
+          </div>
+        </ion-card>
+      </ion-col> 
+    </ion-row>
+  </ion-grid>
 
   <!-- button -->
   <ion-fab right bottom>
