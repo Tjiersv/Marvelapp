@@ -12,7 +12,7 @@ export class ComicListService {
   apiKey: string = '45775b57c8c73e1cedb257aa5c957232'
   ts: string = '1';
   hash: any = '5352bc52db2c3b7c664db3a9bdbf0068'
-  url = 'http://gateway.marvel.com'
+  url = 'https://gateway.marvel.com'
   comicList: Comic[] = []
   characters: Personaje[] = []
   author: Autor[] = []
