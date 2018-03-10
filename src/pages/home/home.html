@@ -1,17 +1,32 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+<!-- header -->
+<ion-header color="danger">
+    <ion-searchbar placeholder="buscar por título o año" (ionInput)="getComicSearch($event)"></ion-searchbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<!-- body content -->
+<ion-content class="card-background-page">
+
+  <!-- tarjetas de comics -->
+  <ion-card (click)="getDetalle(comic)" *ngFor="let comic of comicList">
+    <div [ngStyle]="{'background-image': 'url('+ comic.thumbnail +')'}" class="bg-container">
+      <div class="bg-img"></div>
+    </div>
+    <div text-left padding-left class="card-title">{{ comic.title | uppercase }}</div>
+    <div text-left padding-left class="card-subtitle">
+      <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>  
+      <small> {{ comic.date | date }}</small>
+      <br>
+      <ion-icon ios="ios-cash" md="md-cash"></ion-icon>
+      <small> ${{ comic.prices }}</small>
+      <ion-icon class="icon-arrow" float-end padding-right ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>
+    </div>
+  </ion-card>
+
+  <!-- button -->
+  <ion-fab right bottom>
+    <button (click)="getComic()" margin class="add-button" ion-fab color="danger">
+      <ion-icon ios="ios-add" md="md-add"></ion-icon>
+    </button>
+  </ion-fab>
+
 </ion-content>

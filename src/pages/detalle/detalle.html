@@ -1,0 +1,93 @@
+<!-- detalle header -->
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title color="light">
+      {{ comic.title | uppercase }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-scroll scrollY="true">
+</ion-scroll>
+<!-- detalle content -->
+<ion-content>
+  <!-- detalle slides components -->
+  <ion-slides pager>
+
+    <!-- slide 1 -->
+    <ion-slide class="slide" [ngStyle]="{'background-image': 'url('+ comic.thumbnail +')'}">
+      <div class="slide-bgImg">
+        <ion-grid class="slide-bgImg-grid">
+
+
+          <!-- descripcion seccion -->
+          <ion-row>
+            <ion-col col-12 text-justify>
+              <p class="font-color">{{ comic.description}}</p>
+            </ion-col>
+          </ion-row>
+
+          <!-- fecha/formato/precio/upc seccion -->
+          <ion-row text-left class="slide-bgImg-grid-item font-color">
+            <ion-col col-12>
+              <small>Fecha de venta: {{ comic.date | date:'fullDate' }}</small>
+            </ion-col>
+            <ion-col col-12>
+              <small ion-text>Formato: {{ comic.format }}</small>
+            </ion-col>
+            <ion-col col-12>
+              <small>Precio de venta: ${{ comic.prices }}</small>
+            </ion-col>
+            <ion-col col-12>
+              <small>UPC: {{ comic.upc }}</small>
+            </ion-col>
+          </ion-row>
+
+          <!-- copyrigth seccion-->
+          <ion-row class="slide-bgImg-item font-color">
+            <ion-col col-12>
+              <small class="font-color">© 2018 MARVEL</small>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+
+      </div>
+    </ion-slide>
+
+    <!-- slide personajes -->
+    <ion-slide class="slide-normal">
+      <ion-list class="personajes-list">
+        <ion-list-header>
+          Personajes
+        </ion-list-header>
+        <ion-item *ngFor="let pj of pjs">
+          <ion-avatar item-start>
+            <img [src]="pj.thumbnail">
+          </ion-avatar>
+          <h2>{{pj.name}}</h2>
+          <p>{{pj.description}}</p>
+          <small>Modificado: {{pj.modified | date:'fullDate'}}</small>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+
+    <!-- slide  -->
+    <ion-slide class="slide-normal">
+      <ion-list class="personajes-list">
+          <ion-list-header>
+            Autores
+          </ion-list-header>
+          <ion-item *ngFor="let autor of autores">
+            <ion-avatar item-start>
+              <img [src]="autor.thumbnail">
+            </ion-avatar>
+            <h2>{{autor.fullName}}</h2>
+            <small>Modificado: {{autor.modified | date:'fullDate'}}</small>
+          </ion-item>
+        </ion-list>
+    </ion-slide>
+
+
+  </ion-slides>
+</ion-content>

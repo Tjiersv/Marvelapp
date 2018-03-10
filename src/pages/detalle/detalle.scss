@@ -1,0 +1,66 @@
+ion-slides {
+  background-position: center;
+  display: block;
+  margin: auto;
+  .slide {
+    background: bottom no-repeat;
+    height: 100vh;
+    width: 100%;
+    .slide-bgImg {
+      top: 0;
+      margin-top: 50px;
+      position: absolute;
+      height: 90vh;
+      width: 100%;
+      background: rgba(76, 76, 76, 0);
+      background: -moz-linear-gradient(top, rgba(76, 76, 76, 0) 0%, rgba(17, 17, 17, 1) 32%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76, 76, 76, 0)), color-stop(32%, rgba(17, 17, 17, 1)));
+      background: -webkit-linear-gradient(top, rgba(76, 76, 76, 0) 0%, rgba(17, 17, 17, 1) 32%);
+      background: -o-linear-gradient(top, rgba(76, 76, 76, 0) 0%, rgba(17, 17, 17, 1) 32%);
+      background: -ms-linear-gradient(top, rgba(76, 76, 76, 0) 0%, rgba(17, 17, 17, 1) 32%);
+      background: linear-gradient(to bottom, rgba(76, 76, 76, 0) 0%, rgba(17, 17, 17, 1) 32%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#111111', GradientType=0);
+      ion-item {
+        background-color: rgba(0, 0, 0, 0)
+      }
+      p {
+        font-size: 13px;
+      }
+      .slide-bgImg-grid{
+        margin-top: 200px;
+      }
+    }
+  }
+  .personajes-list{
+    ion-list-header{
+      font-size: 20px;
+    }
+  }
+}
+
+ion-grid {
+  bottom: 0px;
+}
+
+.font-color {
+  color: white
+}
+
+.swiper-pagination-bullet {
+  background: white;
+}
+
+.slide-normal{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.slide-zoom {
+  height: 100%;
+}
+
+.item-md {  
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
