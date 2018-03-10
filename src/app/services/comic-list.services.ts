@@ -55,9 +55,10 @@ export class ComicListService {
       this.offset = this.offset + 20
   }
 
-  private getAllCharactersByComicId (url) {
+  private getAllCharactersByComicId (id) {
     this.characters = [];
-    this.http.get(`${url}?ts=1&apikey=${this.apiKey}&hash=${this.hash}`)
+    console.log(id);
+    this.http.get(`${this.url}/v1/public/comics/${id}/characters?ts=1&apikey=${this.apiKey}&hash=${this.hash}`)
       .map((res: any) => res.data.results)
       .subscribe((characters)=>{
         for (const key in characters) {
@@ -72,9 +73,10 @@ export class ComicListService {
       })
   }
 
-  private getAuthorByComicId (url) {
+  private getAuthorByComicId (id) {
     this.author = [];
-    this.http.get(`${url}?ts=1&apikey=${this.apiKey}&hash=${this.hash}`)
+    console.log(id);
+    this.http.get(`${this.url}/v1/public/comics/${id}/creators?ts=1&apikey=${this.apiKey}&hash=${this.hash}`)
     .map((res: any) => res.data.results)
       .subscribe((authors)=>{
         for (const key in authors) {

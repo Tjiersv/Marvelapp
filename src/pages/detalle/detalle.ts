@@ -20,8 +20,8 @@ export class DetallePage {
     this.pjs = []
     this.autores = []
     this.comic = this.navParams.data.comic
-    this.pjs = this._comicList.getCharacters(this.comic.characters)
-    this.autores = this._comicList.getAuthor(this.comic.creators)
+    this.pjs = this._comicList.getCharacters(this.comic.id)
+    this.autores = this._comicList.getAuthor(this.comic.id)
   }
 
 }
