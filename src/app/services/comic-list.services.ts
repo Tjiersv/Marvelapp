@@ -9,9 +9,9 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class ComicListService {
 
-  apiKey: string = '45775b57c8c73e1cedb257aa5c957232'
+  apiKey: string = 'here your marvel public apikey' // info => developer.marvel.com
   ts: string = '1';
-  hash: any = '5352bc52db2c3b7c664db3a9bdbf0068'
+  hash: any = 'here your hash' // info => developer.marvel.com
   url = 'https://gateway.marvel.com'
   comicList: Comic[] = []
   characters: Personaje[] = []
@@ -24,15 +24,14 @@ export class ComicListService {
     this.getAllComics(null)
   }
 
+  // // GET - getAllComics
+  // Obtiene todos los comics de marvel desde 1900 hasta 2017
   private getAllComics(data) {
-    
     let params = `format=comic&dateRange=${this.rangeInit}-01-01%2C${this.rangeFinal}-12-31&limit=20&offset=${this.offset}&ts=1&apikey=${this.apiKey}&hash=${this.hash}`
-    
     if(data != null){
       params = data
       this.comicList = []
     }
-
     this.http.get(`${this.url}/v1/public/comics?${params}`)
       .map((res: any) => res.data.results)
       .subscribe(comics => {
@@ -54,7 +53,8 @@ export class ComicListService {
       });
       this.offset = this.offset + 20
   }
-
+  // // GET - getAllCharactersByComicId
+  // Obtiene todos los personajes del comic seleccionado
   private getAllCharactersByComicId (id) {
     this.characters = [];
     console.log(id);
@@ -72,7 +72,8 @@ export class ComicListService {
         }
       })
   }
-
+  // // GET - getAuthorByComicId
+  // Obtiene todos los creadores del comic seleccionado
   private getAuthorByComicId (id) {
     this.author = [];
     console.log(id);
@@ -89,7 +90,8 @@ export class ComicListService {
         }
       })
   }
-
+  // // getComicsByNameOrAge
+  // funcion que discrimina si la busqueda está siendo por titulo o por año
   public getComicsByNameOrAge(data){
     let expNum = /^[0-9]*$/
     let params = null
@@ -102,17 +104,20 @@ export class ComicListService {
     }
     return this.comicList
   }
-
+  // // getComics
+  // retorna la lista de comics
   public getComics() {
     this.getAllComics(null)
     return this.comicList
   }
-
+  // // getCharacters
+  // retorna los personajes obtenidos
   public getCharacters(url) {
     this.getAllCharactersByComicId(url)
     return this.characters
   }
-
+// // getAuthor
+  // retorna los creadores obtenidos
   public getAuthor(url) {
     this.getAuthorByComicId(url)
     return this.author

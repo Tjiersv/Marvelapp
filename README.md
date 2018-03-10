@@ -14,8 +14,8 @@ Este proyecto utiliza la API de [© 2018 MARVEL](https://developer.marvel.com/).
 
 ## Créditos
 
-- [Tjier Salazar Varos](https://twitter.com/TjierSV)
 - [© 2018 MARVEL](https://developer.marvel.com/)
+- [Tjier Salazar Varos](https://twitter.com/TjierSV)
 
 ## License
 

@@ -17,15 +17,18 @@ export class HomePage {
     this.getComic()
   }
 
+  // retorna la lista de comics medieante la peticion al servicios comicListServices
   getComic() {
     console.log("Entro");
     this.comicList = this._comicListServices.getComics()
   }
 
+  // redirecciona al comic seleccionado
   getDetalle(comic) {
     this.navCtrl.push(DetallePage, { comic });
   }
 
+  // retorna la lista de comics medieante la peticion al servicios comicListServices realizada por el buscador
   getComicSearch(ev) {
     this.strSearch = ''
     this.strSearch = ev.target.value
