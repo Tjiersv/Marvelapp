@@ -10,8 +10,6 @@ Este proyecto utiliza la API de [© 2018 MARVEL](https://developer.marvel.com/).
 - En la pantalla detalle muestra el detalle del comic seleccionado
 - El buscado retorna los comics por 'Título' o 'Año de Venta'
 
-## Uso
-
 ## Créditos
 
 - [© 2018 MARVEL](https://developer.marvel.com/)
